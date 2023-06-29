@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
+import { useNavigate } from 'react-router-dom';
 const UserOrderDetails = () => {
   const [details, setDetails] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('Token');
@@ -25,7 +27,11 @@ const UserOrderDetails = () => {
         setDetails(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+          if(error.message=="Request failed with status code 403")
+          {
+            navigate("/")
+          }
       });
   }, []);
 

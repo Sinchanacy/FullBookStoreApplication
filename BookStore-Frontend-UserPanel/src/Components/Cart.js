@@ -6,11 +6,13 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 import '../CSS/Cart.css'; // Import CSS file for custom styles
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
   const [cartItems, setCartItems] = useState([]);
   const [orderStatus, setOrderStatus] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setCartItems(cart);
@@ -33,6 +35,11 @@ const Cart = () => {
       clearCart();
       console.log(response.data);
     } catch (error) {
+      console.log(error.message);
+          if(error.message=="Request failed with status code 403")
+          {
+            navigate("/")
+          }
       setOrderStatus("Order Failed");
       console.log(error);
     }
@@ -60,6 +67,7 @@ const Cart = () => {
       ) : (
         <p>No books in cart</p>
       )}
+      <br></br>
       <br></br>
       <div className="place-order-container">
         <Button className="place-order-btn" onClick={() => handleAddToOrder()}>

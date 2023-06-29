@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import '../CSS/BookDetails.css';
-import NavBar from './NavBar';
 import CartContext from '../Context/CartContext';
 
 const BookDetails = () => {
@@ -12,6 +11,7 @@ const BookDetails = () => {
   const location = useLocation();
   const bookId = location.state?.bookId;
   const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const fetchBookDetails = async () => {
@@ -30,8 +30,12 @@ const BookDetails = () => {
         );
 
         setBook(response.data);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.log(err.message);
+          if(err.message=="Request failed with status code 403")
+          {
+            navigate("/")
+          }
       }
     };
 
@@ -66,6 +70,7 @@ const BookDetails = () => {
               <Button className="add-to-cart-btn" onClick={() => handleAddToCart(book)}>
               Add to Cart
                  </Button>
+                 <br></br>
                 <Link to="/bookList">
                   <Button className="my-2 mx-4" type="submit">Back</Button>
                 </Link>

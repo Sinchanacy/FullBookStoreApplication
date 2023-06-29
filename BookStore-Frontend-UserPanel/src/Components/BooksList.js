@@ -15,7 +15,7 @@ const BooksList=()=>{
     useEffect(()=>{
           const token = localStorage.getItem("Token");
           console.log(token);
-        const response =axios.get("http://localhost:8080/bookStore/userPanel/allBooks",{
+          axios.get("http://localhost:8080/bookStore/userPanel/allBooks",{
           headers: {
               'Authorization': 'Bearer ' + token
           }
@@ -24,7 +24,13 @@ const BooksList=()=>{
             console.log(resp.data);
             setBooks(resp.data);
         }
-        ).catch(err=>{console.log(err);});
+        ).catch(err=>{
+          console.log(err.message);
+          if(err.message==="Request failed with status code 403")
+          {
+            navigate("/")
+          }
+        });
 
     },[]    
     )

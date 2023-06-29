@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const [firstname,setName]=useState('');
+  const [username,setName]=useState('');
   const [email,setEmaial]=useState('');
   const [password,setPassword]=useState('');
   const [reg,setReg]=useState(''); 
@@ -24,10 +24,10 @@ function Register() {
     console.log(form.checkValidity());
     if(form.checkValidity() === true)
     {
-      const user={firstname,email,password};
+      const user={username,email,password};
       console.log("USER:"+user);
       try {
-        const response=await axios.post("http://localhost:8080/welcome/register",user,{
+        const response=await axios.post("http://localhost:8080/bookStore/userPanel/register",user,{
         headers:{
           'Content-Type':'application/json',
         },
@@ -35,7 +35,7 @@ function Register() {
       setReg("Registration Successful:Verify the email")
       setValidated(true);
       console.log(response.data);
-      navigate("/");
+      navigate("/")
         
       } catch (error) {
         if(error.response.status===403)
@@ -72,7 +72,7 @@ function Register() {
             <Form.Control
               type="text"
               placeholder="Full name*"
-              value={firstname}
+              value={username}
               required
               onChange={(e)=>setName(e.target.value)}
             />

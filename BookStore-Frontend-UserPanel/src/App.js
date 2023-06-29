@@ -12,6 +12,7 @@ import { CartProvider } from './Context/CartContext';
 import Cart from './Components/Cart';
 import UserOrderDetails from './Components/UserOrderDetails';
 import RemoveBook from './Components/RemoveBook';
+import Logout from './Components/Logout';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/order" element={<UserOrderDetails />} />
             <Route exact path="/removeBook" element={<RemoveBook />} />
+            <Route exact path="/logout" element={<Logout />} />
             
           </Routes>
           </CartProvider>  

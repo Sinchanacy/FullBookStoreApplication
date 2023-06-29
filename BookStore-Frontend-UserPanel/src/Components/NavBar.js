@@ -23,7 +23,7 @@ function NavBar() {
             <Nav.Link className="me-auto mx-5 my-lg-0" href="/cart"><h4><b>Cart</b></h4></Nav.Link>
             <Nav.Link className="me-auto mx-5 my-lg-0" href="/order"><h4><b>Orders</b></h4></Nav.Link>
           </Nav>
-          <Link to="/login">
+          <Link to="/logout">
             <Button variant="outline-light" className="me-auto mx-2 my-lg-0"  size="lg">
               Logout
             </Button>
