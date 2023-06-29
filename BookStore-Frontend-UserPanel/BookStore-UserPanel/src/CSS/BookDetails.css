@@ -1,0 +1,20 @@
+.book-details-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-details-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .book-details-box h4, .book-details-box p {
+    margin-bottom: 5px;
+  }
+  
+  .book-details-box h5 {
+    margin-top: 10px;
+  }
+  
