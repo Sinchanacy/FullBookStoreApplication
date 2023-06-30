@@ -1,0 +1,31 @@
+.add-book-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .add-book-form div {
+    margin-bottom: 20px;
+  }
+  
+  .add-book-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .add-book-form input,
+  .add-book-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-book-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px
+  }  

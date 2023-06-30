@@ -1,0 +1,21 @@
+.bookListGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 60px;
+  }
+  
+  .book {
+    background-color: #c7e9f7;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .remove-from-cart-btn {
+    margin-top: 10px;
+  }
+  
+  .place-order-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }

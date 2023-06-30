@@ -1,0 +1,27 @@
+.update-price-form {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .update-price-form h3 {
+    margin-bottom: 10px;
+  }
+  
+  .update-price-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .update-price-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .update-price-form .form-control {
+    width: 100%;
+  }
+  
+  .update-price-form button {
+    display: block;
+    margin-top: 10px;
+  }
+  
